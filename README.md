@@ -1,5 +1,5 @@
 # restServices
 RestTraining
 
-These files are purly for traing purpuses
+These files are purlly for traing Porpoise's
 
