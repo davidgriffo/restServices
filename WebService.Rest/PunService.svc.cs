@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
+using Data;
+
 
 namespace WebService.Rest
 {
@@ -13,19 +15,12 @@ namespace WebService.Rest
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class PunService
     {
-        // To use HTTP GET, add [WebGet] attribute. (Default ResponseFormat is WebMessageFormat.Json)
-        // To create an operation that returns XML,
-        //     add [WebGet(ResponseFormat=WebMessageFormat.Xml)],
-        //     and include the following line in the operation body:
-        //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
-        [OperationContract]
-        [WebGet(UriTemplate = "/DoRealWork")]
-        public void DoWork()
+        [WebGet(UriTemplate="/Puns")]
+        public Pun[] GetPuns()
         {
-            // Add your operation implementation here
-            return;
+            var service = new PunDataService();
+            return service.GetPuns();
         }
 
-        // Add more operations here and mark them with [OperationContract]
     }
 }

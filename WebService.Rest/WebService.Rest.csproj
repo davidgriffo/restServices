@@ -83,6 +83,12 @@
       <DependentUpon>PunService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{00f507bc-dedc-4d14-9f07-cf3927773087}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -103,6 +109,7 @@
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>
+          <EnableWcfTestClientForSVCDefaultValue>false</EnableWcfTestClientForSVCDefaultValue>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
